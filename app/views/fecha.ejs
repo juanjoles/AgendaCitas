@@ -1,0 +1,25 @@
+<%- include("templates/cabecera", {tituloweb:'Buscar por fecha'}) %>
+    .<div class="container">
+
+
+        <div class="mask d-flex align-items-center h-100" size="5">
+
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-5 col-md-8">
+                        <form class="bg-white  rounded-5 shadow-5-strong p-5" action="/citas/fecha" method="GET">
+                            <h1>Buscar</h1>
+                            
+                            <input type="date" placeholder="Agregar fecha" class="form-control my-2" name="fecha">
+                            
+
+                            <button class="btn btn-success btn-block" type="submit">Buscar</button>
+                            <a href="/home" class="btn btn-success btn-block my-4">Volver</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include("templates/footer") %>

@@ -1,0 +1,48 @@
+<%- include("templates/cabecera") %> 
+<body>
+    <div class="container">
+        <h1>Agenda Citas App</h1>
+        
+        <table class="table" >
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if (arraycitas.length > 0) { %>
+                    <% arraycitas.forEach(citas => { %>
+                        <tr>
+                            <th scope="row" > <%= citas.id %> </th>
+                            <td><%= citas.nombre %></td>
+                            <td><%= citas.apellido %></td>
+                            <% var nueva=citas.fecha.split(" ")[0].split("-").reverse().join("-"); %> 
+                            <td><%= nueva %></td>
+                            <form method="POST" action="/citas/eliminar/<%= citas.id %>">
+                            <td><button class="btn btn-danger btn-sm mt-2"
+                                    id="btnEliminar"
+                                    
+                                    >
+                                        Eliminar
+                                    </button></td>
+                                </form>
+                        </tr>     
+                    <% }) %>
+                    
+                <% } %>
+                         
+              </tbody>
+        </table>
+    </div>
+
+    <script>
+        
+        
+    </script>
+</body>
+<%- include("templates/footer") %> 
+
+
